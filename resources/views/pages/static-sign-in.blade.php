@@ -10,7 +10,7 @@
     </div>
     <main class="main-content  mt-0">
         <div class="page-header align-items-start min-vh-100"
-            style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+            style="background-image: url('https://cdn.milenio.com/uploads/media/2023/09/11/universidad-politecnica-de-pachuca.jpeg');">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container my-auto">
                 <div class="row">
@@ -45,22 +45,22 @@
                                         <input type="email" class="form-control" name="email" required>
                                     </div>
                                     <div class="input-group input-group-outline mb-3">
-                                        <label class="form-label">Password</label>
+                                        <label class="form-label">Contraseña</label>
                                         <input type="password" class="form-control" name="password" required>
                                     </div>
                                     <div class="form-check form-switch d-flex align-items-center mb-3">
                                         <input class="form-check-input" type="checkbox" id="rememberMe">
-                                        <label class="form-check-label mb-0 ms-2" for="rememberMe">Remember
-                                            me</label>
+                                        <label class="form-check-label mb-0 ms-2" for="rememberMe">Recordar contraseña
+                                            </label>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign
-                                            in</button>
+                                        <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Iniciar
+                                            sesión</button>
                                     </div>
                                     <p class="mt-4 text-sm text-center">
-                                        Don't have an account?
+                                        No tienes cuenta?
                                         <a href="{{ route('static-sign-up') }}"
-                                            class="text-primary text-gradient font-weight-bold">Sign up</a>
+                                            class="text-primary text-gradient font-weight-bold">Registrarse</a>
                                     </p>
                                 </form>
                             </div>
