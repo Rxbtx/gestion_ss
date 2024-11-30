@@ -55,7 +55,7 @@
                                             <h6 class="text-center mb-0">Salary</h6>
                                             <span class="text-xs">Belong Interactive</span>
                                             <hr class="horizontal dark my-3">
-                                            <h5 class="mb-0">+$2000</h5>
+                                            <h5 class="mb-0">+$200  000</h5>
                                         </div>
                                     </div>
                                 </div>
