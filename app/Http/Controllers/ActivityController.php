@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Actividad;
+use App\Models\Activity;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
     public function index()
     {
-        $actividades = Actividad::all();
-        return view('actividades.index', compact('actividades'));
+        $activities = Activity::all();
+        return view('pages.tables',compact('activities'));
     }
 
     public function create()
     {
-        return view('actividades.create');
+        return view('pages.create-activities');
     }
 
     public function store(Request $request)
@@ -26,18 +26,18 @@ class ActivityController extends Controller
             'estatus' => 'required|in:Realizada,Pendiente,No Realizada',
         ]);
 
-        Actividad::create($request->all());
+        Activity::create($request->all());
 
-        return redirect()->route('actividades.index')
-                         ->with('success', 'Actividad creada exitosamente.');
+        return redirect()->route('activities.index')
+                          ->with('success', 'Actividad creada exitosamente.');
     }
 
-    public function edit(Actividad $actividad)
+    public function edit(Activity $activity)
     {
-        return view('actividades.edit', compact('actividad'));
+        return view('pages.edit-activities', compact('activity'));
     }
 
-    public function update(Request $request, Actividad $actividad)
+    public function update(Request $request, Activity $activity)
     {
         $request->validate([
             'actividad' => 'required',
@@ -45,16 +45,17 @@ class ActivityController extends Controller
             'estatus' => 'required|in:Realizada,Pendiente,No Realizada',
         ]);
 
-        $actividad->update($request->all());
+        $activity->update($request->all());
+        $activity->save();
 
-        return redirect()->route('actividades.index')
+        return redirect()->route('activities.index')
                          ->with('success', 'Actividad actualizada exitosamente.');
     }
 
-    public function destroy(Actividad $actividad)
+    public function destroy(Activity $activity)
     {
-        $actividad->delete();
-        return redirect()->route('actividades.index')
+        $activity->delete();
+        return redirect()->route('activities.index')
                          ->with('success', 'Actividad eliminada exitosamente.');
     }
 }

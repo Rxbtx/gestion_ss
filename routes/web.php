@@ -53,6 +53,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('tables', function () {
 		return view('pages.tables');
 	})->name('tables');
+	Route::get('activities', function () {
+		return view('activities.activity');
+	})->name('activities');
 	Route::get('rtl', function () {
 		return view('pages.rtl');
 	})->name('rtl');
@@ -74,5 +77,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('user-profile', function () {
 		return view('pages.laravel-examples.user-profile');
 	})->name('user-profile');
-	Route::resource('actividades', ActivityController::class);
 });
+
+Route::resource('activities', ActivityController::class);
+Route::get('pages/create', [ActivityController::class, 'create'])->name('pages.create-activities');
+Route::get('pages/edit', [ActivityController::class, 'edit'])->name('pages.edit-activities');
+Route::get('tables', [ActivityController::class, 'index'])->name('tables');
+
